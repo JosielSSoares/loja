@@ -5,12 +5,12 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Página / Login - Painel Administrativo</title>
+  <title>Painel Loja</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="../assets/img/favicon.png" rel="icon">
+  <link href="../logo-loja.ico" rel="icon">
   <link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
@@ -36,6 +36,13 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
+
+  <style>
+    .logo img {
+      max-height: 100px !important;
+      margin-right: 6px;
+    }
+  </style>
 </head>
 
 <body>
@@ -46,14 +53,24 @@
       <section class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
         <div class="container">
           <div class="row justify-content-center">
-            <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
+            <a href="login.php" class="logo d-flex align-items-center w-auto">
+              <div class="col-lg-12 col-md-12 d-flex flex-column align-items-center justify-content-center">
+                <img src="../logo-loja.ico" alt="">
+              </div>
+            </a>
+          </div>
 
-              <div class="d-flex justify-content-center py-4">
-                <a href="index.html" class="logo d-flex align-items-center w-auto">
-                  <img src="../assets/img/logo.png" alt="">
+          <div class="row justify-content-center">
+            <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
+              <a href="login.php" class="logo d-flex align-items-center w-auto">
+
+                <div class="d-flex justify-content-center py-4">
+
+
                   <span class="d-none d-lg-block">Painel Administrativo</span>
-                </a>
-              </div><!-- End Logo -->
+
+                </div><!-- End Logo -->
+              </a>
 
               <div class="card mb-3">
 
@@ -64,39 +81,60 @@
                     <!-- <p class="text-center small">Entre com seu usuário e senha</p> -->
                   </div>
 
-                  <form class="row g-3 needs-validation" novalidate>
+                  <form class="row g-3 needs-validation" novalidate id="formulario-autentica-usuario">
 
                     <div class="col-12">
                       <label for="yourUsername" class="form-label">Nome de usuário</label>
                       <div class="input-group has-validation">
                         <!-- <span class="input-group-text" id="inputGroupPrepend">@</span> -->
-                        <input type="text" name="username" class="form-control" id="yourUsername" required>
-                        <div class="invalid-feedback"></div>
+                        <input type="text" name="login-usuario-autenticacao" id="login-usuario-autenticacao" class="form-control" required>
+
                       </div>
                     </div>
 
                     <div class="col-12">
                       <label for="yourPassword" class="form-label">Senha</label>
-                      <input type="password" name="password" class="form-control" id="yourPassword" required>
-                      <div class="invalid-feedback"></div>
+                      <input type="password" name="senha-usuario-autenticacao" id="senha-usuario-autenticacao" class="form-control" required>
+
                     </div>
 
                     <div class="col-12 mt-4">
-                      <button class="btn btn-primary w-100" type="submit">Login</button>
+                      <button class="btn btn-primary w-100" type="button" id="autenticacao-usuario">Login</button>
                     </div>
+
+
                     <div class="col-12">
                       <p class="small mb-0">Não possui uma conta?<a href="#" data-bs-toggle="modal" data-bs-target="#cadastro-usuario" data-backdrop="static">Cadastrar Usuario</a></p>
-                      <p class="small mt-2">Esqueceu sua senha?<a href="#" data-bs-toggle="modal" data-bs-target="" data-backdrop="static">Clique aqui</a></p>
+                      <p class="small mt-2">Esqueceu sua senha?<a href="#" data-bs-toggle="modal" data-bs-target="#esqueci-minha-senha-usuario" data-backdrop="static">Clique aqui</a></p>
                     </div>
                   </form>
 
+                  <div class="col-12">
+                    <div class="alert alert-success bg-success text-light border-0 alert-dismissible fade show" id="recebe-mensagem-autenticacao-realizado-usuario" role="alert">
+                      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                  </div>
+
+
+                  <div class="col-12">
+                    <div class="alert alert-warning bg-warning border-0 alert-dismissible fade show" id="recebe-mensagem-campo-vazio-autentica-usuario" role="alert">
+                      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                  </div>
+
+                  <div class="col-12">
+                    <div class="alert alert-warning bg-warning border-0 alert-dismissible fade show" id="recebe-mensagem-campo-falha-autentica-usuario" role="alert">
+                      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                  </div>
                 </div>
               </div>
 
 
-            <?php 
-            require("cadastro_usuario.php");
-            ?>
+              <?php
+              require("cadastro_usuario.php");
+              require("alterar_senha.php");
+              ?>
 
 
               <div class="credits">
@@ -104,7 +142,7 @@
                 <!-- You can delete the links only if you purchased the pro version. -->
                 <!-- Licensing information: https://bootstrapmade.com/license/ -->
                 <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
-                Designed by <a target="_blank" href="https://www.linkedin.com/in/josielssoares/">Josiel Soares</a>
+                <!-- Designed by <a target="_blank" href="https://www.linkedin.com/in/josielssoares/">Josiel Soares</a> -->
               </div>
 
             </div>
@@ -117,7 +155,7 @@
   </main><!-- End #main -->
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js" ></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <!-- Vendor JS Files -->
   <script src="../assets/vendor/apexcharts/apexcharts.min.js"></script>
   <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -128,9 +166,11 @@
   <script src="../assets/vendor/tinymce/tinymce.min.js"></script>
   <script src="../assets/vendor/php-email-form/validate.js"></script>
   <script src="../assets/js/usuario.js"></script>
+  <script src="../assets/js//menu-principal.js"></script>
 
   <!-- Template Main JS File -->
   <script src="../assets/js/main.js"></script>
 
 </body>
+
 </html>

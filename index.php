@@ -1,3 +1,3 @@
 <?php 
-header("Location:visao/acesso/login.php");
+header("Location:https://www.idailneto.com.br/loja/visao/acesso/login.php");
 ?>

@@ -1,3 +1,13 @@
+ <style>
+   .imagem {
+     /* background-image: url("../usuario/imagem_perfil/usuario_sem_foto.jpg");
+     background-repeat: no-repeat;
+     
+     background-size: 70px;
+     
+     background-position: center; */
+   }
+ </style>
  <!-- Disabled Backdrop Modal -->
  <div class="modal fade" id="cadastro-usuario" tabindex="-1" data-bs-backdrop="false">
    <div class="modal-dialog">
@@ -55,6 +65,24 @@
                  </div>
                </div>
 
+               <div class="col-12">
+                 <label for="inputNumber" class="col-sm-12 col-form-label">Imagem Perfil</label>
+                 <div class="col-sm-12">
+                   <input class="form-control" type="file" id="foto-perfil" name="foto-perfil">
+                 </div>
+               </div>
+
+               <div class="col-4 news">
+                 <div class="news">
+                   <div class="post-item clearfix">
+                     <img src="" id="exibi-foto-perfil" class="imagem" style="width: 80px;height: 85px;">
+                     <!-- <h4><a href="#">Nihil blanditiis at in nihil autem</a></h4>
+                     <p>Sit recusandae non aspernatur laboriosam. Quia enim eligendi sed ut harum...</p> -->
+                   </div>
+
+                 </div>
+               </div>
+
                <!-- <div class="col-12">
                  <div class="form-check">
                    <input class="form-check-input" name="terms" type="checkbox" value="" id="acceptTerms" required>
@@ -69,6 +97,30 @@
                <div class="col-12">
                  <p class="small mb-0">Já possui uma conta? <a href="#">Faça Login</a></p>
                </div>
+
+               <div class="col-12">
+                 <div class="alert alert-success bg-success text-light border-0 alert-dismissible fade show" id="recebe-mensagem-cadastro-realizado-usuario" role="alert">
+                   <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
+                 </div>
+               </div>
+
+               <div class="col-12">
+                 <div class="alert alert-warning bg-warning border-0 alert-dismissible fade show" id="recebe-mensagem-campo-vazio-cadastro-usuario" role="alert">
+                   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                 </div>
+               </div>
+
+               <div class="col-12">
+                 <div class="alert alert-warning bg-warning border-0 alert-dismissible fade show" id="recebe-mensagem-campo-falha-cadastro-usuario" role="alert">
+                   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                 </div>
+               </div>
+
+               <div class="col-12">
+                 <div class="alert alert-warning bg-warning border-0 alert-dismissible fade show" id="recebe-mensagem-campo-email-duplicado-cadastro-usuario" role="alert">
+                   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                 </div>
+               </div>
              </form>
            </div>
          </div>
@@ -81,4 +133,3 @@
    </div>
  </div>
  <!-- End Disabled Backdrop Modal-->
-
